@@ -55,3 +55,5 @@ function movePos(currentPos, moves) {
   });
   return result;
 }
+
+console.log(knightMoves([1,2],[5,5]))
