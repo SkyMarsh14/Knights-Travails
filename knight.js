@@ -11,8 +11,8 @@ function knightMoves(start, end) {
       while (queue.length) {
           const [currentPosition, path] = queue.shift();
           const [x, y] = currentPosition;
-
           if (x === end[0] && y === end[1]) {
+              announcePath(path);
               return path;
           }
 
@@ -30,7 +30,15 @@ function knightMoves(start, end) {
           }
       }
 
-      return null;
+      return null; 
+  }
+
+  function announcePath(path) {
+      console.log("The knight's path is:");
+      path.forEach((position, index) => {
+          const [x, y] = position;
+          console.log(`Step ${index + 1}: [${x}, ${y}]`);
+      });
   }
 
   return bfs(start, end);
